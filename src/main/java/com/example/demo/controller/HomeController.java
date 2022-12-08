@@ -11,12 +11,14 @@ public class HomeController {
     @Autowired
     Service service;
 
+    @Autowired
+    UserRepository userRepository;
+
     @GetMapping("/")
     public String trigegr(){
-
-
-        System.out.println("current thread name:" + Thread.currentThread().getName());
-        return "aaaa";
+        User user = new User("john");
+        userRepository.save(user);
+        return user.id;
     }
 
     @GetMapping("/bbb")
