@@ -1,0 +1,6 @@
+services:
+  custom-app:
+    build: .
+    image: custom-app-image
+    ports:
+      - "8082:8081"
