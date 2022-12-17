@@ -27,6 +27,7 @@ public class HomeController {
         if (user.isPresent()){
             return user.get();
         }
+        System.out.println("some logs");
         return null;
     }
 
