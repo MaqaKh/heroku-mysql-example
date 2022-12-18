@@ -1,7 +1,16 @@
 language: java
 jdk:
   - openjdk8
-install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+services:
+  - mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+
+before_script:
+  - cd my-project
+  - mvn dependency:tree
+
 script:
-  - mvn test
+  - mvn test -B
