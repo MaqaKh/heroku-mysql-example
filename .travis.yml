@@ -7,7 +7,7 @@ services:
   -
 before_install:
   - chmod +x ./mvnw
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS pnm;'
 
 install:
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
